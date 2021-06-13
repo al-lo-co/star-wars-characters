@@ -1,6 +1,10 @@
 <div class="container index">
   <h1 class="container-title">Star wars characters</h1>
-  <%= link_to "Filtrar por favoritos", '#', class: "round-button filter"  %>
+  <% unless params[:favs] %>
+    <%= link_to "Filtrar por favoritos", characters_path(favs: true), class: "round-button filter"  %>
+  <%else%>
+    <%= link_to "Filtrar por favoritos", characters_path, class: "round-button filter"  %>
+  <% end %>
   <div class="container-characters">
     <% @characters.in_groups_of(5, false).each do |characters| %>
       <div class="container-characters-column">

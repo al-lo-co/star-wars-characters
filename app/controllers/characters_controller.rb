@@ -1,8 +1,12 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :set_character, only: [:show, :edit, :update, :destroy, :fav]
 
   def index
-    @characters = Character.page(params[:page]).per(10)
+    unless params[:favs]
+      @characters = Character.order(id: :asc).page(params[:page]).per(10)
+    else
+      @characters = Character.where(favorite: true).order(id: :asc).page(params[:page]).per(10)
+    end
   end
 
   def show
@@ -26,7 +30,14 @@ class CharactersController < ApplicationController
       redirect_to characters_url
     end
   end
-  
+
+  def fav
+    if @character.toggle_fav
+      render 'show'
+    else
+      render 'index'
+    end
+  end
   
   private
 

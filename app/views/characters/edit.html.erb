@@ -1,28 +1,33 @@
-<div> 
+<div class="container">
+  <h1 class="container-title">Star wars characters</h1>
+  <%= link_to "< Volver al listado", characters_path, class: "back-button"%>
+  
+    <%= form_for @character, html: {class: "container-data"} do |f| %>
 
-<%= form_for @character do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </div>
-  <div>
-    <%= f.label :birth_year %>
-    <%= f.text_field :birth_year %>
-  </div>
-  <div>
-    <%= f.label :height %>
-    <%= f.text_field :height %>
-  </div>
-  <div>
-    <%= f.label :mass %>
-    <%= f.text_field :mass %>
-  </div>
+      <div class="container-header">
 
-  <%= f.submit %>
-<% end %>
+        <h1 class="container-header-text">
+          <%= f.text_field :name, class: "form-name" %>
+        </h1>
+        <%= link_to favorite_path(id: @character) do %>
+          <% if @character.favorite %>
+            <i class="fas fa-star fav-star"></i>
+          <% else %>
+            <i class="far fa-star fav-star"></i>
+          <% end %>
+        <% end %>
+      </div>
 
+      <p><%= @character.gender.capitalize %></p>
+      <p>Birth date: <%= @character.birth_year %></p>
+      <p>Amount of films: <%= @character.films.size %></p>
+      <p>
+        Heigth: <%= f.text_field :height, class: "form-mass-heigth" %> | Mass: <%= f.text_field :mass, class: "form-mass-heigth" %>
+      </p>
+      <div class="container-data-actions">
+        <%= f.submit "Guardar cambios", class:"round-button form-button"  %>
+      </div>
+    <% end %>
+   
+  
 </div>

@@ -48,6 +48,12 @@
   text-decoration: none;
  }
 
+ input{
+  background-color: #1a1a1a;
+  color: #fff;
+  border-style: none none inset none;
+ }
+
  .container{
   background-color: #1a1a1a;
   width: 30rem;
@@ -190,4 +196,18 @@
 .nav-buttons{
   font-size: 0.6rem;
   margin: 0 0.5rem;
+}
+
+.form-mass-heigth{
+  width: 2rem;
+}
+
+.form-name{
+  width: 11rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.form-button{
+  padding: 0.25rem 1.5rem;
 }
