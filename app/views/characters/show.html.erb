@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="container-title">Star wars characters</h1>
+  <%= link_to "< Volver al listado", characters_path, class: "back-button"%>
+  <div class="container-data">
+    <div class="container-header">
+      <h1 class="container-header-text">
+        <%= @character.name %>
+      </h1>
+      <% if @character.favorite %>
+        <i class="fas fa-star fav-star"></i>
+      <% else %>
+        <i class="far fa-star fav-star"></i>
+      <% end %>
+    </div>
+    <p><%= @character.gender.capitalize %></p>
+    <p>Birth date: <%= @character.birth_year %></p>
+    <p>Amount of films: <%= 5 %></p>
+    <p>Heigth: <%= @character.height %> | Mass: <%= @character.mass %></p>
+    <div class="container-data-actions">
+      <%= link_to 'Editar', edit_character_path(id: @character), class: "round-button" %>
+    </div>
+  </div>  
+</div>

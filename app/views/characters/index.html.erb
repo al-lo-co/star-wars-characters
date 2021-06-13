@@ -1,0 +1,31 @@
+<div class="container index">
+  <h1 class="container-title">Star wars characters</h1>
+  <%= link_to "Filtrar por favoritos", '#', class: "round-button filter"  %>
+  <div class="container-characters">
+    <% @characters.in_groups_of(5, false).each do |characters| %>
+      <div class="container-characters-column">
+        <% characters.each do |character| %>
+          <div class="container-character">
+            <%= link_to "x", character ,method: :delete, data: {confirm: "Si borras, la accioon no se podra deshacer"}, title: "Seguro que quieres borrar", class: "delete-button" %>
+            <div class="container-character-info">
+              <span class="character-column-header">
+                <p class="character-column-header-name">
+                  <%= link_to character.name, character %>
+                </p>
+                <% if character.favorite %>
+                  <i class="fas fa-star fav-star active mini"></i>
+                <% end %>
+              </span>
+              <p class="character-column-body">
+                <%= "#{character.gender.capitalize} | Birth date: #{character.birth_year}" %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+ 
+  <%= paginate @characters %>
+ 
+</div>
