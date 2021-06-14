@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="container-title">Star wars characters</h1>
-  <%= link_to "< Volver al listado", characters_path, class: "back-button"%>
+  <%= link_to "< Volver al listado", request_update_path, class: "back-button", remote: true %>
   
     <%= form_for @character, html: {class: "container-data"} do |f| %>
 

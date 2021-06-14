@@ -1,0 +1,7 @@
+$('div.modal').css("display", "flex");
+$('div.modal div.modal-body').html("<%= j render 'request_update' %>");
+$('div.modal div.modal-body .cancel-destroy').click(function(e){
+  e.preventDefault();
+  $('div.modal').hide();
+  $('div.modal-body').empty();
+})

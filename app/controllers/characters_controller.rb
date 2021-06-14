@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy, :fav]
+  before_action :set_character, only: [:show, :edit, :update, :destroy, :fav, :request_destroy]
 
   def index
     unless params[:favs]
@@ -38,7 +38,13 @@ class CharactersController < ApplicationController
       render 'index'
     end
   end
+
+  def request_destroy
+  end
   
+  def request_update
+  end
+
   private
 
   def set_character

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :characters, only: [:index, :show, :edit, :update, :destroy]
   root 'characters#index'
   get :favorite, to: 'characters#fav'
+  get :request_destroy, to: 'characters#request_destroy'
+  get :request_update, to: 'characters#request_update'
 end

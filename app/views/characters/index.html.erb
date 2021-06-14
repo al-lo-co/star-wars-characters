@@ -10,7 +10,7 @@
       <div class="container-characters-column">
         <% characters.each do |character| %>
           <div class="container-character">
-            <%= link_to "x", character ,method: :delete, data: {confirm: "Si borras, la accioon no se podra deshacer"}, title: "Seguro que quieres borrar", class: "delete-button" %>
+            <%= link_to "x", request_destroy_path(id: character), remote: true, class: "delete-button" %>
             <div class="container-character-info">
               <span class="character-column-header">
                 <p class="character-column-header-name">
