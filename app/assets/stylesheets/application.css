@@ -54,6 +54,14 @@
   border-style: none none inset none;
  }
 
+ h3{
+   margin: 0.6rem 0 0.1rem 0;
+ }
+
+ span{
+   font-size: 0.75rem;
+ }
+
  .container{
   background-color: #1a1a1a;
   width: 30rem;
@@ -102,6 +110,11 @@
   padding: 0.25rem 3.25rem;
   opacity: 0.65;
   font-size: 0.8rem;
+ }
+
+ .inverse-colors-round-button{
+  color: #000;
+  background-color: #fff;
  }
 
  .container-header{
@@ -259,4 +272,8 @@
   width: 4.5rem;
   text-align: center;
   opacity: 1;
+}
+
+.out-page{
+  width: 6.5rem;
 }

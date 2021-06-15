@@ -3,7 +3,7 @@
   <% unless params[:favs] %>
     <%= link_to "Filtrar por favoritos", characters_path(favs: true), class: "round-button filter"  %>
   <%else%>
-    <%= link_to "Filtrar por favoritos", characters_path, class: "round-button filter"  %>
+    <%= link_to "Filtrar por favoritos", characters_path, class: "round-button filter inverse-colors-round-button"  %>
   <% end %>
   <div class="container-characters">
     <% @characters.in_groups_of(5, false).each do |characters| %>
